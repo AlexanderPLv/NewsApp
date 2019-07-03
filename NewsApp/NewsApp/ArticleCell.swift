@@ -13,9 +13,14 @@ class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var newsLabel: UILabel!
     
+    
+    
     func populate (with article: Article) {
-        
         newsLabel.text = article.title
         
+        if let urlToImage = article.urlToImage {
+            let url = URL(string: urlToImage)
+            newsImageView.kf.setImage(with: url)
+        }
     }
 }

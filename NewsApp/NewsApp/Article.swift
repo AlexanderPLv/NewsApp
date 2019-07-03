@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Article {
+struct Article: Decodable {
     
     let title: String
-    
+    let urlToImage: String?
 }
